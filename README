@@ -1,0 +1,40 @@
+Temperatures Sample Program
+
+A sample Java/Spring Boot application to perform CRUD operations on a simple record.
+
+MySQL schema is defined in resources/db/mysql/init_db.sql
+DB info and credentials are set in resources/application.properties
+
+Endpoints
+
+GET /temperatures/all
+
+Returns a list of all records in the database. This list is currently unpaginated. In addition to each record being returned, a duplicate record is produced, with the temperature converted to Fahrenheit.
+
+
+POST /temperatures/
+Body format: application/json
+{
+    "temperature":<value as a float>
+}
+
+Creates a new record to be inserted into the database
+
+
+GET /temperatures/id/{id}
+
+Fetches specified temperature by row id. Also returns a duplicate that is converted to F
+
+
+PUT /temperatures/id/{id}
+Body format: application/json
+{
+    "temperature":<value as a float>
+}
+
+Updates the requested record with the given temperature
+
+
+DELETE /temperatures/id/{id}
+
+Removes specified record
