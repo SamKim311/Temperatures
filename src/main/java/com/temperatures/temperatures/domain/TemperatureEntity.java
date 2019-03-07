@@ -24,14 +24,17 @@ public class TemperatureEntity {
     @JsonInclude(Include.NON_NULL)
     @Column(name = "temperature")
     private Double temperatureC;
+
     @JsonInclude(Include.NON_NULL)
     @Transient
     private Double temperatureF;
 
     @CreationTimestamp
     private Date createDate;
+
     @UpdateTimestamp
     private Date updateDate;
+
 
     public Integer getId() {
         return id;
